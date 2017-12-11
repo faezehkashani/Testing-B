@@ -20,3 +20,11 @@ class TestLib(TestCase):
         sample_5 = "me@motezana.com"
         self.assertTrue(lib.email_validation(sample_5))
 
+    def test_num_validation(self):
+
+        sample_5 = "12345678909887"
+        self.assertTrue(number_validation(sample_5))  # check function if return True
+
+        sample_2 = "is not digit "      # check function if raise a exception
+        self.assertRaises(ValueError, number_validation, sample_2)
+
