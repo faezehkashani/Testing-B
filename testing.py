@@ -26,5 +26,7 @@ class TestLib(TestCase):
         self.assertTrue(number_validation(sample_5))  # check function if return True
 
         sample_2 = "is not digit "      # check function if raise a exception
-        self.assertRaises(ValueError, number_validation, sample_2)
+        with self.assertRaises(ValueError) as Error:
+            number_validation(sample_2)
+        self.assertEqual(str(Error.exception), 'Invalid entry')
 
